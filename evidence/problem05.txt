@@ -1,0 +1,15 @@
+
+*****************************************************************
+PROBLEM 5: Metadata Filtering
+*****************************************************************
+Query: ถุงยาง หลุด ทำไง
+
+Without filtering by Metadata (lang) -> picks the document with the most keyword matches, ignoring tone:
+  [แสลง] ถุงยางมันหลุดคาในหี ทำไงดี
+
+Filter lang='ทางการ' (want a formal-tone answer for a clinical chatbot):
+  [ทางการ] ถุงยางอนามัยแตกหรือหลุดระหว่างมีเพศสัมพันธ์ ควรทำอย่างไร
+
+Cause: Keyword/Semantic Similarity picks the document with the most matching words
+but does not guarantee the document has the correct Metadata (e.g. register/tone) the system needs
+

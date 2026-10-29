@@ -1,0 +1,24 @@
+
+*****************************************************************
+PROBLEM 6: Top-k / Re-ranking
+*****************************************************************
+Before Re-ranking (Top 6 from First-stage: generic terms 'เอชไอวี','ตรวจ'):
+  score=2 | ถุงยางอนามัยแตกหรือหลุดระหว่างมีเพศสัมพันธ์ ควรทำอย่างไร
+  score=2 | PrEP คืออะไร และเหมาะกับใคร
+  score=2 | U=U หมายความว่าอย่างไร
+  score=2 | ระยะฟักตัว (window period) ของการตรวจเอชไอวีคืออะไร
+  score=2 | คนไทยตรวจเอชไอวีฟรีได้ที่ไหนบ้าง
+  score=2 | หากถูกล่วงละเมิดทางเพศ ควรทำอย่างไรในทันที
+
+After Re-ranking (extra weight for specific terms, e.g. 'ระยะฟักตัว'):
+  score=8 | ระยะฟักตัว (window period) ของการตรวจเอชไอวีคืออะไร
+  score=2 | ถุงยางอนามัยแตกหรือหลุดระหว่างมีเพศสัมพันธ์ ควรทำอย่างไร
+  score=2 | PrEP คืออะไร และเหมาะกับใคร
+  score=2 | U=U หมายความว่าอย่างไร
+  score=2 | คนไทยตรวจเอชไอวีฟรีได้ที่ไหนบ้าง
+  score=2 | หากถูกล่วงละเมิดทางเพศ ควรทำอย่างไรในทันที
+
+Cause: First-stage Retrieval weighs generic terms equally, so the document that is most
+specific and best matches the query can end up ranked near the bottom
+Re-ranking uses finer-grained signals to push the relevant document toward the top
+

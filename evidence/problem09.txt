@@ -1,0 +1,27 @@
+
+*****************************************************************
+PROBLEM 9: Chunk & Retrieval Evaluation
+*****************************************************************
+Real document from sex_q_a.txt is 133746 characters long (391 Q&A)
+Number of chunks produced (CHUNK_SIZE=400, OVERLAP=50): 383
+First few chunk ranges:
+(0, 400)
+(350, 750)
+(700, 1100)
+(1050, 1450)
+(1400, 1800)
+
+Overlap Chunk 1/2 = 50
+
+Retrieval Evaluation:
+Golden Set = 391 (uses every question in sex_q_a.txt as the test set)
+Check whether the Relevant Document appears within Top-1
+Check whether the Relevant Document appears within Top-3
+Check whether the Relevant Document appears within Top-5
+Check whether the Relevant Document appears within Top-10
+
+Example:
+Relevant Document is at Rank 8
+Top-5 = not found, Top-10 = found
+This means the Retriever can find the document, but the ranking is not yet good at the top
+
